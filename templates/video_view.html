@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <video id="video" controls style="width: 1280px"></video>
+        <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+        <script>
+            if (Hls.isSupported()){
+                var video = document.getElementById("video");
+                var hls = new Hls();
+                hls.loadSource("{{url}}");
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            }
+        </script>
+    </body>
+</body>
+</html>

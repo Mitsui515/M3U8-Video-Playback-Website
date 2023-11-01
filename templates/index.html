@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>谭以宁的视频播放网站</title>
+    <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet">
+    <style>
+        .title {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 52px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">谭以宁の专属视频播放网站</h2>
+    <div class="layui-container">
+        <div class="layui-form" style="width: 80%;margin: 20px auto;">
+            <div class="layui-form-item">
+                <div class="layui-input-group">
+                    <input type="text" placeholder="请输入电影名" class="layui-input">
+                    <div class="layui-input-suffix">
+                        <button type="submit" class="layui-btn" lay-submit lay-filter="demo1">点击搜索</button>
+                        <a href="/upload_movie" class="layui-btn layui-btn-primary layui-border-green">我要上传</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="layui-table" style="width: 80%;margin: 0 auto">
+        <colgroup>
+            <col width="300">
+            <col width="180">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>电影名</th>
+            <th>上传时间</th>
+            <th>观看</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie in movie_list %}
+            <tr>
+                <td>{{ movie.name }}</td>
+                <td>{{ movie.create_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    <a href="{{ movie.url }}" class="layui-btn  layui-btn-sm">点击观看</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+</body>
+</html>

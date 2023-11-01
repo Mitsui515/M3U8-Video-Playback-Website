@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>上传视频 | 谭以宁的视频播放网站</title>
+        <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet">
+        <style>
+            .title {
+                margin-top: 100px;
+                text-align: center;
+                font-size: 52px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="layui-container">
+        <h2 class="title">上传视频文件</h2>
+        <div style="width: 50%; margin: 0 auto">
+            <button type="button" class="layui-btn demo-class-accept" lay-options="{accept: 'video'}">
+                <i class="layui-icon layui-icon-upload">上传视频</i>
+            </button>
+        </div>
+    </div>
+    <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+    <script>
+        layui.use(function () {
+            var upload = layui.upload;
+            var layer = layui.layer;
+            // 渲染
+            upload.render({
+                elem: '.demo-class-accept', // 绑定多个元素
+                url: '/video_upload', // 此处配置你自己的上传接口即可
+                accept: 'file', // 普通文件
+                done: function (res) {
+                    layer.msg('上传成功');
+                    console.log(res);
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
