@@ -17,8 +17,10 @@ FLASK-M3U8-VIDEO/
 │
 ├── app.py           # Main Flask application
 ├── templates/       # HTML template files
-├── static/          # Static files (CSS, JavaScript, video files, etc.)
-├── requirements.txt  # List of dependencies
+├── static/          # Static files directory
+│   └── upload/      # New subdirectory for upload files
+│       └── video/   # video files subdirectory
+├── requirements.txt # List of dependencies
 ├── README.md        # Project documentation (this file)
 ```
 
