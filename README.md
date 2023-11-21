@@ -1,4 +1,4 @@
-# M3U8 Video Playback Website
+# M3U8-Video-Playback-Website
 
 ## Project Description
 
@@ -13,7 +13,7 @@ This is a simple M3U8 video playback website developed using the Flask framework
 ## Directory Structure
 
 ```
-FLASK-M3U8-VIDEO/
+M3U8-Video-Playback-Website/
 │
 ├── app.py           # Main Flask application
 ├── templates/       # HTML template files
